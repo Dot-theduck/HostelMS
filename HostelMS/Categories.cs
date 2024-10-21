@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace HostelMS
 {
-    public partial class Form1 : Form
+    public partial class Categories : Form
     {
-        public Form1()
+        public Categories()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
