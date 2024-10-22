@@ -32,9 +32,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.TName = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Amount = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -57,11 +57,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.RName = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FromDt = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
+            this.ToDt = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel3.SuspendLayout();
@@ -102,47 +104,47 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(1001, 230);
+            this.pictureBox9.Location = new System.Drawing.Point(1084, 230);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(40, 37);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 26;
             this.pictureBox9.TabStop = false;
             // 
-            // comboBox1
+            // TName
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.TName.FormattingEnabled = true;
+            this.TName.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox1.Location = new System.Drawing.Point(360, 237);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(107, 25);
-            this.comboBox1.TabIndex = 25;
+            this.TName.Location = new System.Drawing.Point(224, 237);
+            this.TName.Name = "TName";
+            this.TName.Size = new System.Drawing.Size(107, 25);
+            this.TName.TabIndex = 25;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(838, 222);
+            this.label10.Location = new System.Drawing.Point(798, 222);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 17);
             this.label10.TabIndex = 24;
             this.label10.Text = "Amount";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // textBox2
+            // Amount
             // 
-            this.textBox2.Location = new System.Drawing.Point(841, 242);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 25);
-            this.textBox2.TabIndex = 23;
+            this.Amount.Location = new System.Drawing.Point(801, 242);
+            this.Amount.Name = "Amount";
+            this.Amount.Size = new System.Drawing.Size(133, 25);
+            this.Amount.TabIndex = 23;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(214, 214);
+            this.label9.Location = new System.Drawing.Point(342, 214);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(50, 17);
             this.label9.TabIndex = 22;
@@ -376,22 +378,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(952, 305);
             this.dataGridView1.TabIndex = 29;
             // 
-            // comboBox2
+            // RName
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.RName.FormattingEnabled = true;
+            this.RName.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox2.Location = new System.Drawing.Point(217, 238);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 25);
-            this.comboBox2.TabIndex = 30;
+            this.RName.Location = new System.Drawing.Point(345, 238);
+            this.RName.Name = "RName";
+            this.RName.Size = new System.Drawing.Size(121, 25);
+            this.RName.TabIndex = 30;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(357, 214);
+            this.label12.Location = new System.Drawing.Point(221, 214);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 17);
             this.label12.TabIndex = 31;
@@ -407,15 +409,15 @@
             this.label13.TabIndex = 32;
             this.label13.Text = "Period From";
             // 
-            // dateTimePicker1
+            // FromDt
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(490, 237);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(102, 25);
-            this.dateTimePicker1.TabIndex = 33;
+            this.FromDt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FromDt.Location = new System.Drawing.Point(490, 237);
+            this.FromDt.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
+            this.FromDt.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
+            this.FromDt.Name = "FromDt";
+            this.FromDt.Size = new System.Drawing.Size(102, 25);
+            this.FromDt.TabIndex = 33;
             // 
             // label14
             // 
@@ -427,12 +429,29 @@
             this.label14.TabIndex = 34;
             this.label14.Text = "Period in months";
             // 
+            // ToDt
+            // 
+            this.ToDt.Location = new System.Drawing.Point(629, 238);
+            this.ToDt.Name = "ToDt";
+            this.ToDt.Size = new System.Drawing.Size(133, 25);
+            this.ToDt.TabIndex = 35;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(937, 222);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 17);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Amount";
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(629, 238);
+            this.textBox1.Location = new System.Drawing.Point(940, 242);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(133, 25);
-            this.textBox1.TabIndex = 35;
+            this.textBox1.TabIndex = 36;
             // 
             // Bookings
             // 
@@ -440,18 +459,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1144, 669);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ToDt);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.FromDt);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.RName);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.TName);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Amount);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button2);
@@ -464,6 +485,7 @@
             this.Name = "Bookings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bookings";
+            this.Load += new System.EventHandler(this.Bookings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -488,9 +510,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox TName;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Amount;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
@@ -513,11 +535,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox RName;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker FromDt;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox ToDt;
+        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -191,9 +191,9 @@ namespace HostelMS
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            //Bookings bookings = new Bookings();
+            Bookings bookings = new Bookings();
 
-            //bookingForm.Show();
+            //BookingsForm.Show();
         }
 
         private void TNameTb_TextChanged(object sender, EventArgs e)
@@ -210,6 +210,11 @@ namespace HostelMS
 
                 this.Close();
             }
+        }
+
+        private void Tenants_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

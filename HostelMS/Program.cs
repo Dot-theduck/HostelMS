@@ -16,7 +16,7 @@ namespace HostelMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Tenants());
+            Application.Run(new Bookings());
         }
     }
 }

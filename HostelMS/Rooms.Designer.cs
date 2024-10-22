@@ -1,4 +1,6 @@
-﻿namespace HostelMS
+﻿using System;
+
+namespace HostelMS
 {
     partial class Rooms
     {
@@ -29,14 +31,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rooms));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dataGridRoom = new System.Windows.Forms.DataGridView();
+            this.Deletebtn = new System.Windows.Forms.Button();
+            this.Editbtn = new System.Windows.Forms.Button();
+            this.StatusCb = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.RNameTb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,11 +59,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CostCb = new System.Windows.Forms.TextBox();
+            this.TypeCb = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.AddRoom = new System.Windows.Forms.PictureBox();
+            this.Closebtn = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRoom)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -73,68 +75,62 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridRoom
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(198, 364);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(952, 305);
-            this.dataGridView1.TabIndex = 29;
+            this.dataGridRoom.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridRoom.Location = new System.Drawing.Point(198, 364);
+            this.dataGridRoom.Name = "dataGridRoom";
+            this.dataGridRoom.Size = new System.Drawing.Size(952, 305);
+            this.dataGridRoom.TabIndex = 29;
+            this.dataGridRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRoom_CellContentClick);
             // 
-            // button2
+            // Deletebtn
             // 
-            this.button2.BackColor = System.Drawing.Color.Gray;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(753, 272);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 36);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Deletebtn.BackColor = System.Drawing.Color.Gray;
+            this.Deletebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Deletebtn.ForeColor = System.Drawing.Color.White;
+            this.Deletebtn.Location = new System.Drawing.Point(753, 272);
+            this.Deletebtn.Name = "Deletebtn";
+            this.Deletebtn.Size = new System.Drawing.Size(102, 36);
+            this.Deletebtn.TabIndex = 28;
+            this.Deletebtn.Text = "Delete";
+            this.Deletebtn.UseVisualStyleBackColor = false;
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
             // 
-            // button1
+            // Editbtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(592, 272);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 36);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Editbtn.BackColor = System.Drawing.Color.Gray;
+            this.Editbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Editbtn.ForeColor = System.Drawing.Color.White;
+            this.Editbtn.Location = new System.Drawing.Point(592, 272);
+            this.Editbtn.Name = "Editbtn";
+            this.Editbtn.Size = new System.Drawing.Size(102, 36);
+            this.Editbtn.TabIndex = 27;
+            this.Editbtn.Text = "Edit";
+            this.Editbtn.UseVisualStyleBackColor = false;
+            this.Editbtn.Click += new System.EventHandler(this.Editbtn_Click_1);
             // 
-            // pictureBox9
+            // StatusCb
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(1040, 234);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(34, 26);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 26;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.StatusCb.FormattingEnabled = true;
+            this.StatusCb.Items.AddRange(new object[] {
             "Available",
             "Taken"});
-            this.comboBox1.Location = new System.Drawing.Point(879, 235);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 25);
-            this.comboBox1.TabIndex = 25;
+            this.StatusCb.Location = new System.Drawing.Point(879, 235);
+            this.StatusCb.Name = "StatusCb";
+            this.StatusCb.Size = new System.Drawing.Size(121, 25);
+            this.StatusCb.TabIndex = 25;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(543, 214);
+            this.label10.Location = new System.Drawing.Point(495, 214);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 17);
             this.label10.TabIndex = 24;
@@ -150,12 +146,12 @@
             this.label9.TabIndex = 22;
             this.label9.Text = "Room  Name";
             // 
-            // textBox1
+            // RNameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(296, 235);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(133, 25);
-            this.textBox1.TabIndex = 21;
+            this.RNameTb.Location = new System.Drawing.Point(296, 235);
+            this.RNameTb.Name = "RNameTb";
+            this.RNameTb.Size = new System.Drawing.Size(133, 25);
+            this.RNameTb.TabIndex = 21;
             // 
             // label8
             // 
@@ -378,30 +374,30 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(711, 214);
+            this.label13.Location = new System.Drawing.Point(684, 214);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(104, 17);
             this.label13.TabIndex = 33;
             this.label13.Text = "Cost per month";
             // 
-            // textBox4
+            // CostCb
             // 
-            this.textBox4.Location = new System.Drawing.Point(711, 235);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(133, 25);
-            this.textBox4.TabIndex = 32;
+            this.CostCb.Location = new System.Drawing.Point(684, 235);
+            this.CostCb.Name = "CostCb";
+            this.CostCb.Size = new System.Drawing.Size(133, 25);
+            this.CostCb.TabIndex = 32;
             // 
-            // comboBox2
+            // TypeCb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.TypeCb.FormattingEnabled = true;
+            this.TypeCb.Items.AddRange(new object[] {
             "Single",
-            "Double",
-            "Vip"});
-            this.comboBox2.Location = new System.Drawing.Point(546, 238);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 25);
-            this.comboBox2.TabIndex = 34;
+            "Double"});
+            this.TypeCb.Location = new System.Drawing.Point(498, 238);
+            this.TypeCb.Name = "TypeCb";
+            this.TypeCb.Size = new System.Drawing.Size(121, 25);
+            this.TypeCb.TabIndex = 34;
+            this.TypeCb.SelectedIndexChanged += new System.EventHandler(this.TypeCb_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -413,24 +409,47 @@
             this.label12.TabIndex = 35;
             this.label12.Text = "Status";
             // 
+            // AddRoom
+            // 
+            this.AddRoom.Image = ((System.Drawing.Image)(resources.GetObject("AddRoom.Image")));
+            this.AddRoom.Location = new System.Drawing.Point(1023, 234);
+            this.AddRoom.Name = "AddRoom";
+            this.AddRoom.Size = new System.Drawing.Size(34, 26);
+            this.AddRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AddRoom.TabIndex = 36;
+            this.AddRoom.TabStop = false;
+            this.AddRoom.Click += new System.EventHandler(this.AddRoom_Click);
+            // 
+            // Closebtn
+            // 
+            this.Closebtn.Image = ((System.Drawing.Image)(resources.GetObject("Closebtn.Image")));
+            this.Closebtn.Location = new System.Drawing.Point(1087, 12);
+            this.Closebtn.Name = "Closebtn";
+            this.Closebtn.Size = new System.Drawing.Size(54, 50);
+            this.Closebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Closebtn.TabIndex = 37;
+            this.Closebtn.TabStop = false;
+            this.Closebtn.Click += new System.EventHandler(this.Closebtn_Click);
+            // 
             // Rooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1144, 669);
+            this.Controls.Add(this.Closebtn);
+            this.Controls.Add(this.AddRoom);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.TypeCb);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CostCb);
+            this.Controls.Add(this.dataGridRoom);
+            this.Controls.Add(this.Deletebtn);
+            this.Controls.Add(this.Editbtn);
+            this.Controls.Add(this.StatusCb);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.RNameTb);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.label11);
@@ -441,8 +460,7 @@
             this.Name = "Rooms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rooms";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRoom)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -455,6 +473,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,14 +482,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dataGridRoom;
+        private System.Windows.Forms.Button Deletebtn;
+        private System.Windows.Forms.Button Editbtn;
+        private System.Windows.Forms.ComboBox StatusCb;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox RNameTb;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
@@ -491,8 +510,11 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox CostCb;
+        private System.Windows.Forms.ComboBox TypeCb;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox AddRoom;
+        //private EventHandler Editbtn_Click;
+        private System.Windows.Forms.PictureBox Closebtn;
     }
 }
