@@ -37,6 +37,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -101,6 +102,7 @@
             this.EditBtn.TabIndex = 27;
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // AddBtn
             // 
@@ -149,12 +151,23 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.RosyBrown;
+            this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Location = new System.Drawing.Point(198, 90);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(952, 100);
             this.panel3.TabIndex = 20;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Yu Gothic UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(11, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 25);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Payments";
             // 
             // panel2
             // 
@@ -174,6 +187,7 @@
             this.DeleteBtn.TabIndex = 28;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // label7
             // 
@@ -366,6 +380,7 @@
             this.RName.Name = "RName";
             this.RName.Size = new System.Drawing.Size(121, 25);
             this.RName.TabIndex = 30;
+            this.RName.SelectedIndexChanged += new System.EventHandler(this.RName_SelectedIndexChanged_1);
             // 
             // label12
             // 
@@ -487,6 +502,7 @@
             this.Load += new System.EventHandler(this.Bookings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -542,5 +558,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownMonths;
         private System.Windows.Forms.PictureBox CloseBtn;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label10;
     }
 }

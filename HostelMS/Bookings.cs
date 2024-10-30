@@ -43,10 +43,26 @@ namespace HostelMS
             try
             {
                 Con.Open();
-                string Query = "SELECT * FROM BookTbl";
-                SqlDataAdapter sda = new SqlDataAdapter(Query, Con);
+                string query = @"
+            SELECT 
+                b.Rcode,
+                t.TenName AS Tenant,
+                r.RoName AS Room,
+                b.PeriodFrom,
+                b.PeriodTo,
+                r.RoCost AS AmountCalculated,
+                b.AmountPaid,
+                b.Balance
+            FROM 
+                BookTbl b
+            INNER JOIN 
+                TenantTbl t ON b.Tenant = t.TenID
+            INNER JOIN 
+                RoomTbl r ON b.Room = r.Rnum";
+
+                SqlDataAdapter sda = new SqlDataAdapter(query, Con);
                 SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-                var ds = new DataSet();
+                DataSet ds = new DataSet();
                 sda.Fill(ds);
                 dataGridBox.DataSource = ds.Tables[0];
             }
@@ -59,6 +75,7 @@ namespace HostelMS
                 Con.Close();
             }
         }
+
 
         // Method to reset form fields
         private void ResetData()
@@ -169,46 +186,68 @@ namespace HostelMS
             if (TName.SelectedValue == null || RName.SelectedValue == null || FromDt.Text == "")
             {
                 MessageBox.Show("Missing Information!");
+                return;
             }
-            else
+
+            try
             {
-                try
+                Con.Open();
+
+                // Check if tenant already has a booking
+                SqlCommand checkTenantCmd = new SqlCommand("SELECT COUNT(*) FROM BookTbl WHERE Tenant = @Tenant", Con);
+                checkTenantCmd.Parameters.AddWithValue("@Tenant", (int)TName.SelectedValue);
+
+                int tenantCount = (int)checkTenantCmd.ExecuteScalar();
+
+                if (tenantCount > 0)
                 {
-                    Con.Open();
-
-                    // Make sure that @PeriodFrom is a DateTime value
-                    SqlCommand cmd = new SqlCommand("INSERT INTO BookTbl (Tenant, Room, PeriodFrom, PeriodTo, AmountCalculated, AmountPaid) " +
-                                                    "VALUES (@Tenant, @Room, @PeriodFrom, @PeriodTo, @AmountCalculated, @AmountPaid)", Con);
-
-                    cmd.Parameters.AddWithValue("@Tenant", (int)TName.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Room", (int)RName.SelectedValue);
-
-                    // Ensure this is a DateTime value
-                    cmd.Parameters.AddWithValue("@PeriodFrom", FromDt.Value);
-
-                    // PeriodTo could be calculated as a future date, based on the number of months selected
-                    DateTime periodTo = FromDt.Value.AddMonths((int)numericUpDownMonths.Value);
-                    cmd.Parameters.AddWithValue("@PeriodTo", periodTo);
-
-                    // Ensure AmountCalculated and AmountPaid are decimals
-                    cmd.Parameters.AddWithValue("@AmountCalculated", decimal.Parse(AmountToPay.Text));
-                    cmd.Parameters.AddWithValue("@AmountPaid", decimal.Parse(AmountToReceive.Text));
-
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Booking Added!");
-
+                    MessageBox.Show("This tenant already has a room booked.");
                     Con.Close();
-                    ResetData();
-                    ShowPayments();
+                    return;
                 }
-                catch (Exception ex)
+
+                // Check if room is already assigned to another tenant
+                SqlCommand checkRoomCmd = new SqlCommand("SELECT COUNT(*) FROM BookTbl WHERE Room = @Room", Con);
+                checkRoomCmd.Parameters.AddWithValue("@Room", (int)RName.SelectedValue);
+
+                int roomCount = (int)checkRoomCmd.ExecuteScalar();
+
+                if (roomCount > 0)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-                finally
-                {
+                    MessageBox.Show("This room is already assigned to another tenant.");
                     Con.Close();
+                    return;
                 }
+
+                // If both checks pass, proceed with booking
+                SqlCommand cmd = new SqlCommand("INSERT INTO BookTbl (Tenant, Room, PeriodFrom, PeriodTo, AmountCalculated, AmountPaid) " +
+                                                "VALUES (@Tenant, @Room, @PeriodFrom, @PeriodTo, @AmountCalculated, @AmountPaid)", Con);
+
+                cmd.Parameters.AddWithValue("@Tenant", (int)TName.SelectedValue);
+                cmd.Parameters.AddWithValue("@Room", (int)RName.SelectedValue);
+
+                // Set the booking period
+                cmd.Parameters.AddWithValue("@PeriodFrom", FromDt.Value);
+                DateTime periodTo = FromDt.Value.AddMonths((int)numericUpDownMonths.Value);
+                cmd.Parameters.AddWithValue("@PeriodTo", periodTo);
+
+                // Set calculated and paid amounts
+                cmd.Parameters.AddWithValue("@AmountCalculated", decimal.Parse(AmountToPay.Text));
+                cmd.Parameters.AddWithValue("@AmountPaid", decimal.Parse(AmountToReceive.Text));
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Booking Added!");
+                Con.Close();
+                ResetData();
+                ShowPayments();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                Con.Close();
             }
         }
 
@@ -234,6 +273,88 @@ namespace HostelMS
             {
                 this.Close();
             }
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            if (TName.SelectedValue == null || RName.SelectedValue == null || FromDt.Text == "")
+            {
+                MessageBox.Show("Missing Information!");
+            }
+            else
+            {
+                try
+                {
+                    Con.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE BookTbl SET Tenant=@Tenant, Room=@Room, PeriodFrom=@PeriodFrom, PeriodTo=@PeriodTo, AmountCalculated=@AmountCalculated, AmountPaid=@AmountPaid WHERE Rcode=@Rcode", Con);
+
+                    cmd.Parameters.AddWithValue("@Tenant", (int)TName.SelectedValue);
+                    cmd.Parameters.AddWithValue("@Room", (int)RName.SelectedValue);
+                    cmd.Parameters.AddWithValue("@PeriodFrom", FromDt.Value);
+
+                    // Calculate PeriodTo based on number of months selected
+                    DateTime periodTo = FromDt.Value.AddMonths((int)numericUpDownMonths.Value);
+                    cmd.Parameters.AddWithValue("@PeriodTo", periodTo);
+
+                    // Parse and assign calculated and paid amounts
+                    cmd.Parameters.AddWithValue("@AmountCalculated", decimal.Parse(AmountToPay.Text));
+                    cmd.Parameters.AddWithValue("@AmountPaid", decimal.Parse(AmountToReceive.Text));
+
+                    // Set Rcode (primary key) for the booking being edited
+                    cmd.Parameters.AddWithValue("@Rcode", Key);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Booking Updated!");
+
+                    Con.Close();
+                    ResetData();
+                    ShowPayments();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    Con.Close();
+                }
+            }
+        }
+
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (Key == 0)
+            {
+                MessageBox.Show("Select a booking to delete!");
+            }
+            else
+            {
+                try
+                {
+                    Con.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM BookTbl WHERE Rcode=@Rcode", Con);
+                    cmd.Parameters.AddWithValue("@Rcode", Key);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Booking Deleted!");
+                    Con.Close();
+                    ResetData();
+                    ShowPayments();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    Con.Close();
+                }
+            }
+        }
+
+        private void RName_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
