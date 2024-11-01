@@ -204,13 +204,7 @@ namespace HostelMS
 
         private void Closebtn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to close?", "Confirm Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-
-                this.Close();
-            }
+            Application.Exit();
         }
 
         private void TypeCb_SelectedIndexChanged(object sender, EventArgs e)

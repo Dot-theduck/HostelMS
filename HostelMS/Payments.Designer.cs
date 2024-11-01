@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payments));
             this.RName = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Logoutbtn = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.Dashboardbtn = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -63,9 +65,9 @@
             this.TName = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridBox = new System.Windows.Forms.DataGridView();
-            this.Logoutbtn = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -77,7 +79,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // RName
@@ -115,6 +116,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 669);
             this.panel1.TabIndex = 41;
+            // 
+            // Logoutbtn
+            // 
+            this.Logoutbtn.AutoSize = true;
+            this.Logoutbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logoutbtn.ForeColor = System.Drawing.Color.DimGray;
+            this.Logoutbtn.Location = new System.Drawing.Point(78, 630);
+            this.Logoutbtn.Name = "Logoutbtn";
+            this.Logoutbtn.Size = new System.Drawing.Size(63, 21);
+            this.Logoutbtn.TabIndex = 15;
+            this.Logoutbtn.Text = "Logout";
+            this.Logoutbtn.Click += new System.EventHandler(this.Logoutbtn_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(12, 616);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(60, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
             // 
             // Dashboardbtn
             // 
@@ -299,7 +322,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(949, 222);
+            this.label15.Location = new System.Drawing.Point(1075, 228);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(115, 17);
@@ -308,7 +331,7 @@
             // 
             // AmountToReceive
             // 
-            this.AmountToReceive.Location = new System.Drawing.Point(952, 254);
+            this.AmountToReceive.Location = new System.Drawing.Point(1078, 260);
             this.AmountToReceive.Margin = new System.Windows.Forms.Padding(4);
             this.AmountToReceive.Name = "AmountToReceive";
             this.AmountToReceive.Size = new System.Drawing.Size(154, 27);
@@ -316,7 +339,7 @@
             // 
             // numericUpDownMonths
             // 
-            this.numericUpDownMonths.Location = new System.Drawing.Point(695, 258);
+            this.numericUpDownMonths.Location = new System.Drawing.Point(716, 258);
             this.numericUpDownMonths.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownMonths.Name = "numericUpDownMonths";
             this.numericUpDownMonths.Size = new System.Drawing.Size(45, 27);
@@ -325,7 +348,7 @@
             // AmounttoPay
             // 
             this.AmounttoPay.FormattingEnabled = true;
-            this.AmounttoPay.Location = new System.Drawing.Point(790, 258);
+            this.AmounttoPay.Location = new System.Drawing.Point(859, 261);
             this.AmounttoPay.Margin = new System.Windows.Forms.Padding(4);
             this.AmounttoPay.Name = "AmounttoPay";
             this.AmounttoPay.Size = new System.Drawing.Size(140, 24);
@@ -334,7 +357,7 @@
             // CloseBtn
             // 
             this.CloseBtn.Image = ((System.Drawing.Image)(resources.GetObject("CloseBtn.Image")));
-            this.CloseBtn.Location = new System.Drawing.Point(1115, 0);
+            this.CloseBtn.Location = new System.Drawing.Point(1241, 0);
             this.CloseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CloseBtn.Name = "CloseBtn";
             this.CloseBtn.Size = new System.Drawing.Size(63, 62);
@@ -347,7 +370,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(692, 228);
+            this.label14.Location = new System.Drawing.Point(690, 228);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(113, 17);
@@ -426,7 +449,7 @@
             // AddBtn
             // 
             this.AddBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddBtn.Image")));
-            this.AddBtn.Location = new System.Drawing.Point(1131, 235);
+            this.AddBtn.Location = new System.Drawing.Point(1257, 241);
             this.AddBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(47, 46);
@@ -466,34 +489,24 @@
             this.dataGridBox.TabIndex = 49;
             this.dataGridBox.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBox_CellContentClick_1);
             // 
-            // Logoutbtn
+            // label2
             // 
-            this.Logoutbtn.AutoSize = true;
-            this.Logoutbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logoutbtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Logoutbtn.Location = new System.Drawing.Point(78, 630);
-            this.Logoutbtn.Name = "Logoutbtn";
-            this.Logoutbtn.Size = new System.Drawing.Size(63, 21);
-            this.Logoutbtn.TabIndex = 15;
-            this.Logoutbtn.Text = "Logout";
-            this.Logoutbtn.Click += new System.EventHandler(this.Logoutbtn_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(12, 616);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(60, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 14;
-            this.pictureBox7.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(856, 228);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 17);
+            this.label2.TabIndex = 60;
+            this.label2.Text = "Amount to pay";
             // 
             // Payments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1368, 669);
+            this.ClientSize = new System.Drawing.Size(1308, 669);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.RName);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.FromDt);
@@ -521,6 +534,7 @@
             this.Text = "Payments";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -533,7 +547,6 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -577,5 +590,6 @@
         private System.Windows.Forms.DataGridView dataGridBox;
         private System.Windows.Forms.Label Logoutbtn;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label2;
     }
 }

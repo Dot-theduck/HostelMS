@@ -205,13 +205,7 @@ namespace HostelMS
 
         private void Closebtn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to close?", "Confirm Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-
-                this.Close();
-            }
+            Application.Exit();
         }
 
         private void Tenants_Load(object sender, EventArgs e)
