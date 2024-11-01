@@ -186,7 +186,9 @@ namespace HostelMS
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+            Rooms Obj = new Rooms();
+            Obj.Show();
+            this.Hide();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -215,6 +217,34 @@ namespace HostelMS
         private void Tenants_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Dashboardbtn_Click(object sender, EventArgs e)
+        {
+            Dashboard Obj = new Dashboard();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void Tenantbtn_Click(object sender, EventArgs e)
+        {
+            Tenants Obj = new Tenants();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void Paymentbtn_Click(object sender, EventArgs e)
+        {
+            Payments Obj = new Payments();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void Logoutbtn_Click(object sender, EventArgs e)
+        {
+            Login Obj = new Login();
+            Obj.Show();
+            this.Hide();
         }
     }
 }

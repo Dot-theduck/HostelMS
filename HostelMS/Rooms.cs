@@ -217,5 +217,40 @@ namespace HostelMS
         {
 
         }
+
+        private void Dashboardbtn_Click(object sender, EventArgs e)
+        {
+            Dashboard Obj = new Dashboard();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void Roombtn_Click(object sender, EventArgs e)
+        {
+            Rooms Obj = new Rooms();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void Tenantsbtn_Click(object sender, EventArgs e)
+        {
+            Tenants Obj = new Tenants();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void Paymentbtn_Click(object sender, EventArgs e)
+        {
+            Payments Obj = new Payments();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void Logoutbtn_Click(object sender, EventArgs e)
+        {
+            Login Obj = new Login();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }

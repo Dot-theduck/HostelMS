@@ -33,27 +33,24 @@
             this.EditBtn = new System.Windows.Forms.Button();
             this.AddBtn = new System.Windows.Forms.PictureBox();
             this.TName = new System.Windows.Forms.ComboBox();
-            this.AmountToPay = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DeleteBtn = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Logoutbnt = new System.Windows.Forms.Label();
+            this.Paymentbtn = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.Roombtn = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Tenantbnt = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Dashboardbtn = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.dataGridBox = new System.Windows.Forms.DataGridView();
             this.RName = new System.Windows.Forms.ComboBox();
@@ -65,16 +62,15 @@
             this.AmountToReceive = new System.Windows.Forms.TextBox();
             this.numericUpDownMonths = new System.Windows.Forms.NumericUpDown();
             this.CloseBtn = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.AmounttoPay = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonths)).BeginInit();
@@ -123,13 +119,6 @@
             this.TName.Size = new System.Drawing.Size(107, 25);
             this.TName.TabIndex = 25;
             this.TName.SelectedIndexChanged += new System.EventHandler(this.TName_SelectedIndexChanged);
-            // 
-            // AmountToPay
-            // 
-            this.AmountToPay.Location = new System.Drawing.Point(777, 238);
-            this.AmountToPay.Name = "AmountToPay";
-            this.AmountToPay.Size = new System.Drawing.Size(133, 25);
-            this.AmountToPay.TabIndex = 23;
             // 
             // label9
             // 
@@ -189,116 +178,78 @@
             this.DeleteBtn.UseVisualStyleBackColor = false;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
-            // label7
+            // Logoutbnt
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(78, 461);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 21);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Category";
+            this.Logoutbnt.AutoSize = true;
+            this.Logoutbnt.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logoutbnt.ForeColor = System.Drawing.Color.DimGray;
+            this.Logoutbnt.Location = new System.Drawing.Point(78, 630);
+            this.Logoutbnt.Name = "Logoutbnt";
+            this.Logoutbnt.Size = new System.Drawing.Size(63, 21);
+            this.Logoutbnt.TabIndex = 11;
+            this.Logoutbnt.Text = "Logout";
+            this.Logoutbnt.Click += new System.EventHandler(this.Logoutbnt_Click);
             // 
-            // pictureBox7
+            // Paymentbtn
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(12, 447);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(60, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 12;
-            this.pictureBox7.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(78, 630);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 21);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Logout";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(78, 390);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 21);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Bookings";
+            this.Paymentbtn.AutoSize = true;
+            this.Paymentbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Paymentbtn.ForeColor = System.Drawing.Color.DimGray;
+            this.Paymentbtn.Location = new System.Drawing.Point(78, 456);
+            this.Paymentbtn.Name = "Paymentbtn";
+            this.Paymentbtn.Size = new System.Drawing.Size(80, 21);
+            this.Paymentbtn.TabIndex = 9;
+            this.Paymentbtn.Text = "Payments";
+            this.Paymentbtn.Click += new System.EventHandler(this.Paymentbtn_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(12, 376);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 442);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(60, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
             // 
-            // label4
+            // Roombtn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(78, 325);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 21);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Tasks";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 311);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(60, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(78, 269);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 21);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Rooms";
+            this.Roombtn.AutoSize = true;
+            this.Roombtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Roombtn.ForeColor = System.Drawing.Color.DimGray;
+            this.Roombtn.Location = new System.Drawing.Point(78, 325);
+            this.Roombtn.Name = "Roombtn";
+            this.Roombtn.Size = new System.Drawing.Size(61, 21);
+            this.Roombtn.TabIndex = 5;
+            this.Roombtn.Text = "Rooms";
+            this.Roombtn.Click += new System.EventHandler(this.Roombtn_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 255);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 311);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(60, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
-            // label2
+            // Tenantbnt
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(78, 203);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 21);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Tenants";
+            this.Tenantbnt.AutoSize = true;
+            this.Tenantbnt.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tenantbnt.ForeColor = System.Drawing.Color.DimGray;
+            this.Tenantbnt.Location = new System.Drawing.Point(78, 391);
+            this.Tenantbnt.Name = "Tenantbnt";
+            this.Tenantbnt.Size = new System.Drawing.Size(65, 21);
+            this.Tenantbnt.TabIndex = 3;
+            this.Tenantbnt.Text = "Tenants";
+            this.Tenantbnt.Click += new System.EventHandler(this.Tenantbnt_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 189);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 377);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -329,18 +280,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.Dashboardbtn);
             this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.Logoutbnt);
+            this.panel1.Controls.Add(this.pictureBox6);
+            this.panel1.Controls.Add(this.Paymentbtn);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.Roombtn);
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.Tenantbnt);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -349,6 +298,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 669);
             this.panel1.TabIndex = 17;
+            // 
+            // Dashboardbtn
+            // 
+            this.Dashboardbtn.AutoSize = true;
+            this.Dashboardbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dashboardbtn.ForeColor = System.Drawing.Color.DimGray;
+            this.Dashboardbtn.Location = new System.Drawing.Point(78, 252);
+            this.Dashboardbtn.Name = "Dashboardbtn";
+            this.Dashboardbtn.Size = new System.Drawing.Size(89, 21);
+            this.Dashboardbtn.TabIndex = 13;
+            this.Dashboardbtn.Text = "Dashboard";
+            this.Dashboardbtn.Click += new System.EventHandler(this.Dashboardbtn_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(12, 238);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(60, 50);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -457,15 +428,14 @@
             this.CloseBtn.TabStop = false;
             this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
-            // label16
+            // AmounttoPay
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(774, 214);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(125, 17);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "Amount To Be Paid";
+            this.AmounttoPay.FormattingEnabled = true;
+            this.AmounttoPay.Location = new System.Drawing.Point(765, 240);
+            this.AmounttoPay.Name = "AmounttoPay";
+            this.AmounttoPay.Size = new System.Drawing.Size(121, 25);
+            this.AmounttoPay.TabIndex = 40;
+            this.AmounttoPay.SelectedIndexChanged += new System.EventHandler(this.AmounttoPay_SelectedIndexChanged);
             // 
             // Bookings
             // 
@@ -473,7 +443,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1144, 669);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.AmounttoPay);
             this.Controls.Add(this.CloseBtn);
             this.Controls.Add(this.numericUpDownMonths);
             this.Controls.Add(this.label15);
@@ -487,7 +457,6 @@
             this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.TName);
-            this.Controls.Add(this.AmountToPay);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.DeleteBtn);
@@ -503,14 +472,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonths)).EndInit();
@@ -526,22 +494,17 @@
         private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.PictureBox AddBtn;
         private System.Windows.Forms.ComboBox TName;
-        private System.Windows.Forms.TextBox AmountToPay;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button DeleteBtn;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Logoutbnt;
+        private System.Windows.Forms.Label Paymentbtn;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Roombtn;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Tenantbnt;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -557,7 +520,9 @@
         private System.Windows.Forms.TextBox AmountToReceive;
         private System.Windows.Forms.NumericUpDown numericUpDownMonths;
         private System.Windows.Forms.PictureBox CloseBtn;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox AmounttoPay;
+        private System.Windows.Forms.Label Dashboardbtn;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

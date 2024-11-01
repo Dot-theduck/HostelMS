@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace HostelMS
 {
-    public partial class Bookings : Form
+    public partial class Payments : Form
     {
-        public Bookings()
+        public Payments()
         {
             InitializeComponent();
             ShowPayments();
@@ -87,7 +87,7 @@ namespace HostelMS
 
         int Key = 0;
 
-        private void dataGridBox_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridBox_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -158,18 +158,34 @@ namespace HostelMS
         private decimal GetRoomCost(int roomID)
         {
             decimal roomCost = 0;
-            using (SqlCommand cmd = new SqlCommand("SELECT RoCost FROM RoomTbl WHERE Rnum = @RoomID", Con))
+            try
             {
-                cmd.Parameters.AddWithValue("@RoomID", roomID);
-                Con.Open();
-                roomCost = (decimal)cmd.ExecuteScalar();
-                Con.Close();
+                using (SqlCommand cmd = new SqlCommand("SELECT RoCost FROM RoomTbl WHERE Rnum = @RoomID", Con))
+                {
+                    cmd.Parameters.AddWithValue("@RoomID", roomID);
+                    Con.Open();
+                    object result = cmd.ExecuteScalar();
+                    roomCost = (result != null) ? (decimal)result : 0; // Handle potential null values
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving room cost: " + ex.Message);
+            }
+            finally
+            {
+                if (Con.State == ConnectionState.Open)
+                {
+                    Con.Close();
+                }
             }
             return roomCost;
         }
 
+
+
         // Method to add a new booking
-        private void AddBtn_Click(object sender, EventArgs e)
+        private void AddBtn_Click_1(object sender, EventArgs e)
         {
             if (TName.SelectedValue == null || RName.SelectedValue == null || FromDt.Text == "")
             {
@@ -180,6 +196,18 @@ namespace HostelMS
             try
             {
                 Con.Open();
+
+                // Check if the selected room is marked as "Taken"
+                SqlCommand checkRoomStatusCmd = new SqlCommand("SELECT RoStatus FROM RoomTbl WHERE Rnum = @RoomID", Con);
+                checkRoomStatusCmd.Parameters.AddWithValue("@RoomID", (int)RName.SelectedValue);
+                string roomStatus = checkRoomStatusCmd.ExecuteScalar()?.ToString();
+
+                if (roomStatus == "Taken")
+                {
+                    MessageBox.Show("This room is already taken. Please select an available room.");
+                    Con.Close();
+                    return;
+                }
 
                 SqlCommand checkTenantCmd = new SqlCommand("SELECT COUNT(*) FROM BookTbl WHERE Tenant = @Tenant", Con);
                 checkTenantCmd.Parameters.AddWithValue("@Tenant", (int)TName.SelectedValue);
@@ -230,16 +258,7 @@ namespace HostelMS
             }
         }
 
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you sure you want to close?", "Confirm Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void DeleteBtn_Click(object sender, EventArgs e)
+        private void DeleteBtn_Click_1(object sender, EventArgs e)
         {
             if (Key == 0)
             {
@@ -269,7 +288,7 @@ namespace HostelMS
             }
         }
 
-        private void EditBtn_Click(object sender, EventArgs e)
+        private void EditBtn_Click_1(object sender, EventArgs e)
         {
             if (TName.SelectedValue == null || RName.SelectedValue == null || FromDt.Text == "")
             {
@@ -315,40 +334,16 @@ namespace HostelMS
             }
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void CloseBtn_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void TName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void Bookings_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RName_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ResetData(params Control[] controls)
-        {
-            foreach (var control in controls)
+            DialogResult result = MessageBox.Show("Are you sure you want to close?", "Confirm Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                if (control is ComboBox cb) cb.SelectedIndex = -1;
-                else if (control is TextBox tb) tb.Clear();
-                else if (control is NumericUpDown nud) nud.Value = nud.Minimum;
+                this.Close();
             }
-            Key = 0;
         }
 
-        private void AmounttoPay_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Dashboardbtn_Click(object sender, EventArgs e)
         {
@@ -357,28 +352,28 @@ namespace HostelMS
             this.Hide();
         }
 
-        private void Roombtn_Click(object sender, EventArgs e)
+        private void Roomsbtn_Click(object sender, EventArgs e)
         {
             Rooms Obj = new Rooms();
             Obj.Show();
             this.Hide();
         }
 
-        private void Tenantbnt_Click(object sender, EventArgs e)
+        private void Tenantbtn_Click(object sender, EventArgs e)
         {
             Tenants Obj = new Tenants();
             Obj.Show();
             this.Hide();
         }
 
-        private void Paymentbtn_Click(object sender, EventArgs e)
+        private void Paymentsbtn_Click(object sender, EventArgs e)
         {
             Payments Obj = new Payments();
             Obj.Show();
             this.Hide();
         }
 
-        private void Logoutbnt_Click(object sender, EventArgs e)
+        private void Logoutbtn_Click(object sender, EventArgs e)
         {
             Login Obj = new Login();
             Obj.Show();
