@@ -62,6 +62,8 @@ namespace HostelMS
             this.label12 = new System.Windows.Forms.Label();
             this.AddRoom = new System.Windows.Forms.PictureBox();
             this.Closebtn = new System.Windows.Forms.PictureBox();
+            this.OwnerTb = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRoom)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -118,7 +120,7 @@ namespace HostelMS
             this.StatusCb.Items.AddRange(new object[] {
             "Available",
             "Taken"});
-            this.StatusCb.Location = new System.Drawing.Point(879, 235);
+            this.StatusCb.Location = new System.Drawing.Point(690, 235);
             this.StatusCb.Name = "StatusCb";
             this.StatusCb.Size = new System.Drawing.Size(121, 25);
             this.StatusCb.TabIndex = 25;
@@ -127,7 +129,7 @@ namespace HostelMS
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(495, 214);
+            this.label10.Location = new System.Drawing.Point(385, 214);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 17);
             this.label10.TabIndex = 24;
@@ -137,7 +139,7 @@ namespace HostelMS
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(296, 214);
+            this.label9.Location = new System.Drawing.Point(221, 214);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 17);
             this.label9.TabIndex = 22;
@@ -145,7 +147,7 @@ namespace HostelMS
             // 
             // RNameTb
             // 
-            this.RNameTb.Location = new System.Drawing.Point(296, 235);
+            this.RNameTb.Location = new System.Drawing.Point(221, 235);
             this.RNameTb.Name = "RNameTb";
             this.RNameTb.Size = new System.Drawing.Size(133, 25);
             this.RNameTb.TabIndex = 21;
@@ -353,7 +355,7 @@ namespace HostelMS
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(684, 214);
+            this.label13.Location = new System.Drawing.Point(540, 214);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(104, 17);
             this.label13.TabIndex = 33;
@@ -361,7 +363,7 @@ namespace HostelMS
             // 
             // CostCb
             // 
-            this.CostCb.Location = new System.Drawing.Point(684, 235);
+            this.CostCb.Location = new System.Drawing.Point(540, 235);
             this.CostCb.Name = "CostCb";
             this.CostCb.Size = new System.Drawing.Size(133, 25);
             this.CostCb.TabIndex = 32;
@@ -372,7 +374,7 @@ namespace HostelMS
             this.TypeCb.Items.AddRange(new object[] {
             "Single",
             "Double"});
-            this.TypeCb.Location = new System.Drawing.Point(498, 238);
+            this.TypeCb.Location = new System.Drawing.Point(388, 238);
             this.TypeCb.Name = "TypeCb";
             this.TypeCb.Size = new System.Drawing.Size(121, 25);
             this.TypeCb.TabIndex = 34;
@@ -382,7 +384,7 @@ namespace HostelMS
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(876, 214);
+            this.label12.Location = new System.Drawing.Point(687, 214);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(46, 17);
             this.label12.TabIndex = 35;
@@ -410,12 +412,34 @@ namespace HostelMS
             this.Closebtn.TabStop = false;
             this.Closebtn.Click += new System.EventHandler(this.Closebtn_Click);
             // 
+            // OwnerTb
+            // 
+            this.OwnerTb.FormattingEnabled = true;
+            this.OwnerTb.Location = new System.Drawing.Point(833, 234);
+            this.OwnerTb.Margin = new System.Windows.Forms.Padding(4);
+            this.OwnerTb.Name = "OwnerTb";
+            this.OwnerTb.Size = new System.Drawing.Size(140, 25);
+            this.OwnerTb.TabIndex = 52;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(830, 204);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Owner";
+            // 
             // Rooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1144, 669);
+            this.Controls.Add(this.OwnerTb);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Closebtn);
             this.Controls.Add(this.AddRoom);
             this.Controls.Add(this.label12);
@@ -492,5 +516,7 @@ namespace HostelMS
         private System.Windows.Forms.PictureBox Closebtn;
         private System.Windows.Forms.Label Dashboardbtn;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.ComboBox OwnerTb;
+        private System.Windows.Forms.Label label2;
     }
 }

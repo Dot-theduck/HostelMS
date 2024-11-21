@@ -375,5 +375,15 @@ namespace HostelMS
             Obj.Show();
             this.Hide();
         }
+
+        private void TName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RName_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

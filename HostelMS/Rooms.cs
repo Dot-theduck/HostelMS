@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace HostelMS
 {
@@ -12,6 +13,7 @@ namespace HostelMS
             InitializeComponent();
             ShowRooms();
             CustomizeDataGridView();
+            LoadOwners();
         }
 
         //connects to database
@@ -91,6 +93,27 @@ namespace HostelMS
                 Key = Convert.ToInt32(row.Cells[0].Value.ToString());
             }
         }
+        // Load owners into ComboBox (OwnerTb)
+        private void LoadOwners()
+        {
+            DataTable dtOwners = GetOwners();
+            OwnerTb.DataSource = dtOwners;        // Set the data source for the combobox
+            OwnerTb.DisplayMember = "OName";     // The column to display (Owner name)
+            OwnerTb.ValueMember = "OID";         // The column to use as the value (Owner ID)
+        }
+
+        // Retrieve owners from the database
+        private DataTable GetOwners()
+        {
+            DataTable dtOwners = new DataTable();
+            using (SqlDataAdapter sda = new SqlDataAdapter("SELECT OID, OName FROM OwnersTbl", Con))
+            {
+                sda.Fill(dtOwners);
+            }
+            return dtOwners;
+        }
+
+
         private void pictureBox9_Click(object sender, EventArgs e)
         {
 
@@ -129,7 +152,7 @@ namespace HostelMS
         private void AddRoom_Click(object sender, EventArgs e)
         {
 
-            if (RNameTb.Text == "" || TypeCb.SelectedIndex == -1 || CostCb.Text == "" || StatusCb.SelectedIndex == -1)
+            if (RNameTb.Text == "" || TypeCb.SelectedIndex == -1 || CostCb.Text == "" || StatusCb.SelectedIndex == -1 || OwnerTb.SelectedIndex == -1)
             {
                 MessageBox.Show("Missing Information!");
             }
@@ -139,13 +162,16 @@ namespace HostelMS
                 {
                     Con.Open();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO RoomTbl(RoName, RoType, RoCost, RoStatus) VALUES(@RN, @RT, @RC, @RS)", Con);
+                    SqlCommand cmd = new SqlCommand(
+                        "INSERT INTO RoomTbl (RoName, RoType, RoCost, RoStatus, OID) VALUES (@RN, @RT, @RC, @RS, @OID)", Con);
+
 
                     cmd.Parameters.AddWithValue("@RN", RNameTb.Text);               
                     cmd.Parameters.AddWithValue("@RT", TypeCb.SelectedItem.ToString()); 
                     cmd.Parameters.AddWithValue("@RC", CostCb.Text);                
-                    cmd.Parameters.AddWithValue("@RS", StatusCb.SelectedItem.ToString()); 
-                    
+                    cmd.Parameters.AddWithValue("@RS", StatusCb.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@OID", OwnerTb.SelectedValue);
+
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Room Added!");
                     Con.Close();
@@ -177,12 +203,14 @@ namespace HostelMS
                 try
                 {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE RoomTbl SET RoName=@RN, RoType=@RT, RoCost=@RC, RoStatus=@RS WHERE Rnum=@RKey", Con);
+                    SqlCommand cmd = new SqlCommand(
+                     "UPDATE RoomTbl SET RoName=@RN, RoType=@RT, RoCost=@RC, RoStatus=@RS, OID=@OID WHERE Rnum=@RKey", Con);
 
                     cmd.Parameters.AddWithValue("@RN", RNameTb.Text);             
                     cmd.Parameters.AddWithValue("@RT", TypeCb.SelectedItem.ToString()); 
                     cmd.Parameters.AddWithValue("@RC", CostCb.Text);       
-                    cmd.Parameters.AddWithValue("@RS", StatusCb.SelectedItem.ToString()); 
+                    cmd.Parameters.AddWithValue("@RS", StatusCb.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@OID", OwnerTb.SelectedValue);
                     cmd.Parameters.AddWithValue("@RKey", Key);                      
 
                     cmd.ExecuteNonQuery();
@@ -207,6 +235,8 @@ namespace HostelMS
             Application.Exit();
         }
 
+
+  
         private void TypeCb_SelectedIndexChanged(object sender, EventArgs e)
         {
 

@@ -5,17 +5,18 @@ using System.Windows.Forms;
 
 namespace HostelMS
 {
-    public partial class Tenants : Form
+    public partial class Owners : Form
     {
-        public Tenants()
+        public Owners()
         {
             InitializeComponent();
-            ShowTenants();
+            ShowOwners();
             CustomizeDataGridView();
         }
+
         //connects to database
         SqlConnection Con = new SqlConnection(@"Data Source=DOTTHEDUCK;Initial Catalog=HostelDb;Integrated Security=True;");
-                // Method to customize the DataGridView appearance
+        // Method to customize the DataGridView appearance
         private void CustomizeDataGridView()
         {
             // Set alternating row colors for better visibility
@@ -41,12 +42,12 @@ namespace HostelMS
 
         }
         //method to display tenants in the datagridview
-        private void ShowTenants()
+        private void ShowOwners()
         {
             try
             {
                 Con.Open();
-                string Query = "SELECT * FROM TenantTbl";
+                string Query = "SELECT * FROM OwnersTbl";
                 SqlDataAdapter sda = new SqlDataAdapter(Query, Con);
                 SqlCommandBuilder builder = new SqlCommandBuilder(sda);
                 var ds = new DataSet();
@@ -72,7 +73,6 @@ namespace HostelMS
             Key = 0;
         }
 
-
         // Event handler for selecting a row in the DataGridView
         int Key = 0;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -87,25 +87,24 @@ namespace HostelMS
                 Key = Convert.ToInt32(row.Cells[0].Value.ToString());
             }
         }
-
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             if (Key == 0)
             {
-                MessageBox.Show("Select a Tenant to Delete!");
+                MessageBox.Show("Select an Owner to Delete!");
             }
             else
             {
                 try
                 {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM TenantTbl WHERE TenId=@TKey", Con);
-                    cmd.Parameters.AddWithValue("@TKey", Key);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM OwnerTbl WHERE OId=@OKey", Con);
+                    cmd.Parameters.AddWithValue("@OKey", Key);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Tenant Deleted!");
+                    MessageBox.Show("Owner Deleted!");
                     Con.Close();
                     ResetData();
-                    ShowTenants();
+                    ShowOwners();
                 }
                 catch (Exception ex)
                 {
@@ -117,7 +116,8 @@ namespace HostelMS
                 }
             }
         }
-        //to save a new tenant
+
+        //to save a new owner
         private void Save_Click(object sender, EventArgs e)
         {
             if (TNameTb.Text == "" || GenCb.SelectedIndex == -1 || PhoneTb.Text == "")
@@ -129,15 +129,15 @@ namespace HostelMS
                 try
                 {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO TenantTbl(TenName, TenPhone, TenGen) VALUES(@TN, @TP, @TG)", Con);
-                    cmd.Parameters.AddWithValue("@TN", TNameTb.Text);
-                    cmd.Parameters.AddWithValue("@TP", PhoneTb.Text);
-                    cmd.Parameters.AddWithValue("@TG", GenCb.SelectedItem.ToString());
+                    SqlCommand cmd = new SqlCommand("INSERT INTO OwnersTbl(OName, OPhone, OGen) VALUES(@ON, @OP, @OG)", Con);
+                    cmd.Parameters.AddWithValue("@ON", TNameTb.Text);
+                    cmd.Parameters.AddWithValue("@OP", PhoneTb.Text);
+                    cmd.Parameters.AddWithValue("@OG", GenCb.SelectedItem.ToString());
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Tenant Added!");
+                    MessageBox.Show("Owner Added!");
                     Con.Close();
                     ResetData();
-                    ShowTenants();
+                    ShowOwners();
                 }
                 catch (Exception ex)
                 {
@@ -149,6 +149,7 @@ namespace HostelMS
                 }
             }
         }
+
 
         //to edet an existing tenant
         private void Editbtn_Click(object sender, EventArgs e)
@@ -162,16 +163,16 @@ namespace HostelMS
                 try
                 {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE TenantTbl SET TenName=@TN, TenPhone=@TP, TenGen=@TG WHERE TenId=@TKey", Con);
-                    cmd.Parameters.AddWithValue("@TN", TNameTb.Text);
-                    cmd.Parameters.AddWithValue("@TP", PhoneTb.Text);
-                    cmd.Parameters.AddWithValue("@TG", GenCb.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@TKey", Key);
+                    SqlCommand cmd = new SqlCommand("UPDATE OwnerTbl SET OName=@ON, OPhone=@OP, OGen=@OG WHERE OId=@OKey", Con);
+                    cmd.Parameters.AddWithValue("@ON", TNameTb.Text);
+                    cmd.Parameters.AddWithValue("@OP", PhoneTb.Text);
+                    cmd.Parameters.AddWithValue("@OG", GenCb.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@OKey", Key);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Tenant Updated!");
                     Con.Close();
                     ResetData();
-                    ShowTenants();
+                    ShowOwners();
                 }
                 catch (Exception ex)
                 {
@@ -184,60 +185,9 @@ namespace HostelMS
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-            Rooms Obj = new Rooms();
-            Obj.Show();
-            this.Hide();
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-            //BookingsForm.Show();
-        }
-
-        private void TNameTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Closebtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void Tenants_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Dashboardbtn_Click(object sender, EventArgs e)
-        {
-            Dashboard Obj = new Dashboard();
-            Obj.Show();
-            this.Hide();
-        }
-
-        private void Tenantbtn_Click(object sender, EventArgs e)
-        {
-            Tenants Obj = new Tenants();
-            Obj.Show();
-            this.Hide();
-        }
-
-        private void Paymentbtn_Click(object sender, EventArgs e)
-        {
-            Payments Obj = new Payments();
-            Obj.Show();
-            this.Hide();
-        }
-
-        private void Logoutbtn_Click(object sender, EventArgs e)
-        {
-            Login Obj = new Login();
-            Obj.Show();
-            this.Hide();
         }
     }
 }

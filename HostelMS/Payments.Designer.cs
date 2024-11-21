@@ -92,6 +92,7 @@
             this.RName.Name = "RName";
             this.RName.Size = new System.Drawing.Size(140, 24);
             this.RName.TabIndex = 50;
+            this.RName.SelectedIndexChanged += new System.EventHandler(this.RName_SelectedIndexChanged_1);
             // 
             // panel1
             // 
@@ -466,6 +467,7 @@
             this.TName.Name = "TName";
             this.TName.Size = new System.Drawing.Size(124, 24);
             this.TName.TabIndex = 45;
+            this.TName.SelectedIndexChanged += new System.EventHandler(this.TName_SelectedIndexChanged);
             // 
             // label9
             // 

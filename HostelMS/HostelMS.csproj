@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,17 +47,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abigael.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abigael.Designer.cs">
+      <DependentUpon>Abigael.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="HostelDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HostelDbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owners.Designer.cs">
+      <DependentUpon>Owners.cs</DependentUpon>
     </Compile>
     <Compile Include="Payments.cs">
       <SubType>Form</SubType>
@@ -78,8 +96,17 @@
     <Compile Include="Tenants.Designer.cs">
       <DependentUpon>Tenants.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Abigael.resx">
+      <DependentUpon>Abigael.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Owners.resx">
+      <DependentUpon>Owners.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payments.resx">
       <DependentUpon>Payments.cs</DependentUpon>
@@ -99,6 +126,17 @@
     <EmbeddedResource Include="Tenants.resx">
       <DependentUpon>Tenants.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="HostelDbDataSet.xsc">
+      <DependentUpon>HostelDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HostelDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HostelDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HostelDbDataSet.xss">
+      <DependentUpon>HostelDbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
