@@ -74,6 +74,8 @@
             this.hostelDbDataSet = new HostelMS.HostelDbDataSet();
             this.Loadbtn = new System.Windows.Forms.Button();
             this.bookTblTableAdapter = new HostelMS.HostelDbDataSetTableAdapters.BookTblTableAdapter();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
@@ -90,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hostelDbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // Closebtn
@@ -128,6 +131,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.Dashboardbtn);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.panel2);
@@ -181,7 +186,7 @@
             this.Paymentbtn.AutoSize = true;
             this.Paymentbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Paymentbtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Paymentbtn.Location = new System.Drawing.Point(78, 456);
+            this.Paymentbtn.Location = new System.Drawing.Point(78, 505);
             this.Paymentbtn.Name = "Paymentbtn";
             this.Paymentbtn.Size = new System.Drawing.Size(80, 21);
             this.Paymentbtn.TabIndex = 9;
@@ -191,7 +196,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(12, 442);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 491);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(60, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -225,7 +230,7 @@
             this.Tenantsbtn.AutoSize = true;
             this.Tenantsbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tenantsbtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Tenantsbtn.Location = new System.Drawing.Point(78, 391);
+            this.Tenantsbtn.Location = new System.Drawing.Point(78, 440);
             this.Tenantsbtn.Name = "Tenantsbtn";
             this.Tenantsbtn.Size = new System.Drawing.Size(65, 21);
             this.Tenantsbtn.TabIndex = 3;
@@ -235,7 +240,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 377);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 426);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -382,6 +387,7 @@
             this.chartRevenue.Location = new System.Drawing.Point(696, 223);
             this.chartRevenue.Name = "chartRevenue";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
             series1.Name = "Tenants";
             series2.ChartArea = "ChartArea1";
@@ -397,7 +403,7 @@
             this.chartRevenue.Series.Add(series2);
             this.chartRevenue.Series.Add(series3);
             this.chartRevenue.Series.Add(series4);
-            this.chartRevenue.Size = new System.Drawing.Size(454, 300);
+            this.chartRevenue.Size = new System.Drawing.Size(467, 300);
             this.chartRevenue.TabIndex = 60;
             this.chartRevenue.Text = "chart2";
             title1.Name = "Title1";
@@ -477,6 +483,28 @@
             // 
             this.bookTblTableAdapter.ClearBeforeFill = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(78, 383);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 21);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Owner";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(12, 367);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(60, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -520,6 +548,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookTblBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hostelDbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -563,5 +592,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn roomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountCalculatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn balanceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

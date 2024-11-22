@@ -170,7 +170,11 @@ namespace HostelMS
             chartRevenue.DataBind();
         }
 
-
-
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Owners Obj = new Owners();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }

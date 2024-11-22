@@ -229,6 +229,52 @@ namespace HostelMS
                 }
             }
         }
+        private void UpdateRoomStatusToTaken(int roomId)
+        {
+            try
+            {
+                Con.Open();
+                string updateRoomStatusQuery = "UPDATE RoomTbl SET RoStatus = 'Taken' WHERE Rnum = @RoomID";
+                SqlCommand cmd = new SqlCommand(updateRoomStatusQuery, Con);
+                cmd.Parameters.AddWithValue("@RoomID", roomId); // Replace 'roomId' with the variable holding the Room ID
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating room status: " + ex.Message);
+            }
+            finally
+            {
+                Con.Close();
+            }
+        }
+
+        private void RentRoom_Click(object sender, EventArgs e)
+        {
+            if (Key == 0)
+            {
+                MessageBox.Show("Select a Room to Rent!");
+                return;
+            }
+            if (StatusCb.Text == "Taken")
+            {
+                MessageBox.Show("Room is already taken!");
+                return;
+            }
+
+            try
+            {
+                UpdateRoomStatusToTaken(Key); // Update the status in the database
+                MessageBox.Show("Room successfully rented!");
+                ResetData(); // Clear input fields
+                ShowRooms(); // Refresh the DataGridView to show updated status
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
 
         private void Closebtn_Click(object sender, EventArgs e)
         {
@@ -273,6 +319,13 @@ namespace HostelMS
         private void Logoutbtn_Click(object sender, EventArgs e)
         {
             Login Obj = new Login();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void Ownerbtn_Click(object sender, EventArgs e)
+        {
+            Owners Obj = new Owners();
             Obj.Show();
             this.Hide();
         }

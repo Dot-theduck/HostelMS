@@ -58,6 +58,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Closebtn = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Ownerbtn = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -69,6 +71,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // PhoneTb
@@ -88,6 +91,7 @@
             this.Dashboardbtn.Size = new System.Drawing.Size(89, 21);
             this.Dashboardbtn.TabIndex = 13;
             this.Dashboardbtn.Text = "Dashboard";
+            this.Dashboardbtn.Click += new System.EventHandler(this.Dashboardbtn_Click);
             // 
             // pictureBox4
             // 
@@ -116,6 +120,7 @@
             this.Logoutbtn.Size = new System.Drawing.Size(63, 21);
             this.Logoutbtn.TabIndex = 11;
             this.Logoutbtn.Text = "Logout";
+            this.Logoutbtn.Click += new System.EventHandler(this.Logoutbtn_Click);
             // 
             // pictureBox6
             // 
@@ -132,16 +137,17 @@
             this.Paymentbtn.AutoSize = true;
             this.Paymentbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Paymentbtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Paymentbtn.Location = new System.Drawing.Point(78, 456);
+            this.Paymentbtn.Location = new System.Drawing.Point(78, 505);
             this.Paymentbtn.Name = "Paymentbtn";
             this.Paymentbtn.Size = new System.Drawing.Size(80, 21);
             this.Paymentbtn.TabIndex = 9;
             this.Paymentbtn.Text = "Payments";
+            this.Paymentbtn.Click += new System.EventHandler(this.Paymentbtn_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(12, 442);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 491);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(60, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -158,6 +164,7 @@
             this.RoomBtn.Size = new System.Drawing.Size(61, 21);
             this.RoomBtn.TabIndex = 5;
             this.RoomBtn.Text = "Rooms";
+            this.RoomBtn.Click += new System.EventHandler(this.RoomBtn_Click);
             // 
             // dataGridView1
             // 
@@ -229,16 +236,17 @@
             this.Tenantbtn.AutoSize = true;
             this.Tenantbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tenantbtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Tenantbtn.Location = new System.Drawing.Point(78, 391);
+            this.Tenantbtn.Location = new System.Drawing.Point(78, 440);
             this.Tenantbtn.Name = "Tenantbtn";
             this.Tenantbtn.Size = new System.Drawing.Size(65, 21);
             this.Tenantbtn.TabIndex = 3;
             this.Tenantbtn.Text = "Tenants";
+            this.Tenantbtn.Click += new System.EventHandler(this.Tenantbtn_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 377);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 426);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -358,6 +366,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.Controls.Add(this.Ownerbtn);
+            this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.Dashboardbtn);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.panel2);
@@ -376,6 +386,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 669);
             this.panel1.TabIndex = 20;
+            // 
+            // Ownerbtn
+            // 
+            this.Ownerbtn.AutoSize = true;
+            this.Ownerbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ownerbtn.ForeColor = System.Drawing.Color.DimGray;
+            this.Ownerbtn.Location = new System.Drawing.Point(78, 383);
+            this.Ownerbtn.Name = "Ownerbtn";
+            this.Ownerbtn.Size = new System.Drawing.Size(58, 21);
+            this.Ownerbtn.TabIndex = 15;
+            this.Ownerbtn.Text = "Owner";
+            this.Ownerbtn.Click += new System.EventHandler(this.Ownerbtn_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(12, 367);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(60, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
             // 
             // Owners
             // 
@@ -399,7 +431,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Owners";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Owners";
@@ -416,6 +448,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,5 +484,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox Closebtn;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label Ownerbtn;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

@@ -144,13 +144,26 @@ namespace HostelMS
         // Method to retrieve room cost and calculate total amount
         private void RName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (RName.SelectedValue != null)
+            if (RName.SelectedValue != null && RName.SelectedValue is int roomID)
             {
-                int roomID = (int)RName.SelectedValue;
-                decimal roomCost = GetRoomCost(roomID);
-                int months = (int)numericUpDownMonths.Value;
-                decimal amountToBePaid = roomCost * months;
-                AmounttoPay.Text = amountToBePaid.ToString();
+                try
+                {
+                    // Fetch the room cost
+                    decimal roomCost = GetRoomCost(roomID);
+
+                    // Get the number of months from the numericUpDown control
+                    int months = (int)numericUpDownMonths.Value;
+
+                    // Calculate the total cost
+                    decimal amountToBePaid = roomCost * months;
+
+                    // Update the AmounttoPay field
+                    AmounttoPay.Text = amountToBePaid.ToString("0.00"); // Format to two decimal places
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error calculating room cost: " + ex.Message);
+                }
             }
         }
 
@@ -165,7 +178,15 @@ namespace HostelMS
                     cmd.Parameters.AddWithValue("@RoomID", roomID);
                     Con.Open();
                     object result = cmd.ExecuteScalar();
-                    roomCost = (result != null) ? (decimal)result : 0; // Handle potential null values
+                    if (result != null && decimal.TryParse(result.ToString(), out roomCost))
+                    {
+                        // Successfully retrieved room cost
+                        return roomCost;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Room cost not found or invalid.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -174,10 +195,7 @@ namespace HostelMS
             }
             finally
             {
-                if (Con.State == ConnectionState.Open)
-                {
-                    Con.Close();
-                }
+                Con.Close();
             }
             return roomCost;
         }
@@ -385,5 +403,18 @@ namespace HostelMS
         {
 
         }
+
+        private void Ownerbtn_Click(object sender, EventArgs e)
+        {
+            Owners Obj = new Owners();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void numericUpDownMonths_ValueChanged(object sender, EventArgs e)
+        {
+            RName_SelectedIndexChanged(sender, e); // Reuse the existing method
+        }
+
     }
 }

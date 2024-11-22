@@ -64,6 +64,8 @@ namespace HostelMS
             this.Closebtn = new System.Windows.Forms.PictureBox();
             this.OwnerTb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Ownerbtn = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRoom)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -76,6 +78,7 @@ namespace HostelMS
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridRoom
@@ -215,7 +218,7 @@ namespace HostelMS
             this.Paymentbtn.AutoSize = true;
             this.Paymentbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Paymentbtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Paymentbtn.Location = new System.Drawing.Point(78, 456);
+            this.Paymentbtn.Location = new System.Drawing.Point(78, 505);
             this.Paymentbtn.Name = "Paymentbtn";
             this.Paymentbtn.Size = new System.Drawing.Size(80, 21);
             this.Paymentbtn.TabIndex = 9;
@@ -225,7 +228,7 @@ namespace HostelMS
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(12, 442);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 491);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(60, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -259,7 +262,7 @@ namespace HostelMS
             this.Tenantsbtn.AutoSize = true;
             this.Tenantsbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tenantsbtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Tenantsbtn.Location = new System.Drawing.Point(78, 391);
+            this.Tenantsbtn.Location = new System.Drawing.Point(78, 440);
             this.Tenantsbtn.Name = "Tenantsbtn";
             this.Tenantsbtn.Size = new System.Drawing.Size(65, 21);
             this.Tenantsbtn.TabIndex = 3;
@@ -269,7 +272,7 @@ namespace HostelMS
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 377);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 426);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -310,6 +313,8 @@ namespace HostelMS
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.Controls.Add(this.Ownerbtn);
+            this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.Dashboardbtn);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.panel2);
@@ -432,6 +437,28 @@ namespace HostelMS
             this.label2.TabIndex = 51;
             this.label2.Text = "Owner";
             // 
+            // Ownerbtn
+            // 
+            this.Ownerbtn.AutoSize = true;
+            this.Ownerbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ownerbtn.ForeColor = System.Drawing.Color.DimGray;
+            this.Ownerbtn.Location = new System.Drawing.Point(78, 383);
+            this.Ownerbtn.Name = "Ownerbtn";
+            this.Ownerbtn.Size = new System.Drawing.Size(65, 21);
+            this.Ownerbtn.TabIndex = 15;
+            this.Ownerbtn.Text = "Owners";
+            this.Ownerbtn.Click += new System.EventHandler(this.Ownerbtn_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(12, 367);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(60, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
+            // 
             // Rooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -477,6 +504,7 @@ namespace HostelMS
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,5 +546,7 @@ namespace HostelMS
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.ComboBox OwnerTb;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Ownerbtn;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

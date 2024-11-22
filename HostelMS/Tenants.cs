@@ -239,5 +239,12 @@ namespace HostelMS
             Obj.Show();
             this.Hide();
         }
+
+        private void Ownerbtn_Click(object sender, EventArgs e)
+        {
+            Owners Obj = new Owners();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }

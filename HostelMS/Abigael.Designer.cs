@@ -30,14 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Abigael));
             this.Closebtn = new System.Windows.Forms.PictureBox();
-            this.Dashboardbtn = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Logoutbtn = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.Roombtn = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,10 +50,8 @@
             this.Rcode = new System.Windows.Forms.ComboBox();
             this.FName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -72,37 +66,12 @@
             this.Closebtn.TabIndex = 63;
             this.Closebtn.TabStop = false;
             // 
-            // Dashboardbtn
-            // 
-            this.Dashboardbtn.AutoSize = true;
-            this.Dashboardbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dashboardbtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Dashboardbtn.Location = new System.Drawing.Point(78, 252);
-            this.Dashboardbtn.Name = "Dashboardbtn";
-            this.Dashboardbtn.Size = new System.Drawing.Size(59, 21);
-            this.Dashboardbtn.TabIndex = 13;
-            this.Dashboardbtn.Text = "Profile";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 238);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(60, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 12;
-            this.pictureBox4.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
-            this.panel1.Controls.Add(this.Dashboardbtn);
-            this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.Logoutbtn);
             this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.Roombtn);
-            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -139,27 +108,6 @@
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
             // 
-            // Roombtn
-            // 
-            this.Roombtn.AutoSize = true;
-            this.Roombtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Roombtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Roombtn.Location = new System.Drawing.Point(78, 325);
-            this.Roombtn.Name = "Roombtn";
-            this.Roombtn.Size = new System.Drawing.Size(54, 21);
-            this.Roombtn.TabIndex = 5;
-            this.Roombtn.Text = "Room";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 311);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(60, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -184,11 +132,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(231, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 32);
+            this.label2.Size = new System.Drawing.Size(184, 47);
             this.label2.TabIndex = 14;
             this.label2.Text = "My Profile";
             // 
@@ -201,7 +149,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 64;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            //this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label3
             // 
@@ -235,7 +183,7 @@
             this.label6.Size = new System.Drawing.Size(123, 32);
             this.label6.TabIndex = 68;
             this.label6.Text = "Room No:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            //this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label8
             // 
@@ -247,7 +195,7 @@
             this.label8.Size = new System.Drawing.Size(138, 32);
             this.label8.TabIndex = 70;
             this.label8.Text = "Room Price";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            //this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // Room
             // 
@@ -256,7 +204,6 @@
             this.Room.Size = new System.Drawing.Size(275, 27);
             this.Room.TabIndex = 72;
             this.Room.Text = "101";
-            //this.Room.TextChanged += new System.EventHandler(this.Room_TextChanged);
             // 
             // Price
             // 
@@ -264,7 +211,6 @@
             this.Price.Name = "Price";
             this.Price.Size = new System.Drawing.Size(275, 27);
             this.Price.TabIndex = 75;
-            //this.Price.TextChanged += new System.EventHandler(this.Price_TextChanged);
             // 
             // Enddate
             // 
@@ -272,7 +218,6 @@
             this.Enddate.Name = "Enddate";
             this.Enddate.Size = new System.Drawing.Size(275, 27);
             this.Enddate.TabIndex = 76;
-            //this.Enddate.TextChanged += new System.EventHandler(this.Enddate_TextChanged);
             // 
             // label7
             // 
@@ -291,7 +236,6 @@
             this.Balance.Name = "Balance";
             this.Balance.Size = new System.Drawing.Size(275, 27);
             this.Balance.TabIndex = 80;
-            //this.Balance.TextChanged += new System.EventHandler(this.Balance_TextChanged);
             // 
             // Rcode
             // 
@@ -308,7 +252,6 @@
             this.FName.Name = "FName";
             this.FName.Size = new System.Drawing.Size(275, 27);
             this.FName.TabIndex = 82;
-           // this.FName.TextChanged += new System.EventHandler(this.Name_TextChanged);
             // 
             // Abigael
             // 
@@ -339,11 +282,9 @@
             this.Text = "Abigael";
             this.Load += new System.EventHandler(this.Abigael_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -353,14 +294,10 @@
 
         #endregion
         private System.Windows.Forms.PictureBox Closebtn;
-        private System.Windows.Forms.Label Dashboardbtn;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Logoutbtn;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label Roombtn;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;

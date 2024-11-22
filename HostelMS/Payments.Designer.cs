@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payments));
             this.RName = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Ownerbtn = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.Logoutbtn = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.Dashboardbtn = new System.Windows.Forms.Label();
@@ -67,6 +69,7 @@
             this.dataGridBox = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -92,11 +95,13 @@
             this.RName.Name = "RName";
             this.RName.Size = new System.Drawing.Size(140, 24);
             this.RName.TabIndex = 50;
-            this.RName.SelectedIndexChanged += new System.EventHandler(this.RName_SelectedIndexChanged_1);
+            this.RName.SelectedIndexChanged += new System.EventHandler(this.RName_SelectedIndexChanged);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.Controls.Add(this.Ownerbtn);
+            this.panel1.Controls.Add(this.pictureBox8);
             this.panel1.Controls.Add(this.Logoutbtn);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.Dashboardbtn);
@@ -117,6 +122,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 669);
             this.panel1.TabIndex = 41;
+            // 
+            // Ownerbtn
+            // 
+            this.Ownerbtn.AutoSize = true;
+            this.Ownerbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ownerbtn.ForeColor = System.Drawing.Color.DimGray;
+            this.Ownerbtn.Location = new System.Drawing.Point(78, 383);
+            this.Ownerbtn.Name = "Ownerbtn";
+            this.Ownerbtn.Size = new System.Drawing.Size(65, 21);
+            this.Ownerbtn.TabIndex = 17;
+            this.Ownerbtn.Text = "Owners";
+            this.Ownerbtn.Click += new System.EventHandler(this.Ownerbtn_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(12, 367);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(60, 50);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 16;
+            this.pictureBox8.TabStop = false;
             // 
             // Logoutbtn
             // 
@@ -199,7 +227,7 @@
             this.Paymentsbtn.AutoSize = true;
             this.Paymentsbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Paymentsbtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Paymentsbtn.Location = new System.Drawing.Point(78, 456);
+            this.Paymentsbtn.Location = new System.Drawing.Point(78, 505);
             this.Paymentsbtn.Name = "Paymentsbtn";
             this.Paymentsbtn.Size = new System.Drawing.Size(80, 21);
             this.Paymentsbtn.TabIndex = 9;
@@ -209,7 +237,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(12, 442);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 491);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(60, 50);
@@ -245,7 +273,7 @@
             this.Tenantbtn.AutoSize = true;
             this.Tenantbtn.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tenantbtn.ForeColor = System.Drawing.Color.DimGray;
-            this.Tenantbtn.Location = new System.Drawing.Point(78, 391);
+            this.Tenantbtn.Location = new System.Drawing.Point(78, 440);
             this.Tenantbtn.Name = "Tenantbtn";
             this.Tenantbtn.Size = new System.Drawing.Size(65, 21);
             this.Tenantbtn.TabIndex = 3;
@@ -255,7 +283,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 377);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 426);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 50);
@@ -345,6 +373,7 @@
             this.numericUpDownMonths.Name = "numericUpDownMonths";
             this.numericUpDownMonths.Size = new System.Drawing.Size(45, 27);
             this.numericUpDownMonths.TabIndex = 57;
+            this.numericUpDownMonths.ValueChanged += new System.EventHandler(this.numericUpDownMonths_ValueChanged);
             // 
             // AmounttoPay
             // 
@@ -536,6 +565,7 @@
             this.Text = "Payments";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -593,5 +623,7 @@
         private System.Windows.Forms.Label Logoutbtn;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Ownerbtn;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
